@@ -1,0 +1,954 @@
+
+Chapter1
+  Chapter1Normal
+    Task4: next
+      returns next Int for 42 [✔]
+      returns next Int for negative [✔]
+      returns next Int for 0 [✔]
+    Task5: lastDigit
+      last digit of 0 [✔]
+      last digit of 0 < x < 10 [✔]
+      last digit of 10 < x < 100 [✔]
+      last digit of 100 < x < 1000 [✔]
+      last digit of big num [✔]
+      last digit of negative [✘]
+    Task6: closestToZero
+      both positive, 1st wins [✔]
+      both positive, 2nd wins [✔]
+      both negative, 2nd wins [✔]
+      both negative, 1st wins [✔]
+      with 0, 1st wins [✔]
+      with 0, 2nd wins [✔]
+      equals [✔]
+      positive, negative, pos wins [✔]
+      positive, negative, neg wins [✔]
+    Task7: mid
+      positives up   [✔]
+      positives down [✔]
+      positives mix  [✔]
+      negatives down [✔]
+      negatives up   [✔]
+      negatives mix  [✔]
+      all equal [✔]
+      all equal, except 1 [✔]
+      all equal, except 1 [✔]
+      all equal, except 1 [✔]
+    Task8: isVowel
+      true for vowels [✔]
+      false for non-vowels [✔]
+      false for symbol [✔]
+    Task9: sumLast2
+      sumLast2 0 [✔]
+      sumLast2 0 < 10 [✔]
+      sumLast2 10 < 100 [✔]
+      sumLast2 100 < 1000 [✔]
+      sumLast2 0 > -10 [✔]
+      sumLast2 -10 > -100 [✔]
+      sumLast2 -100 > -1000 [✔]
+  Chapter1Advanced
+    Task 10*
+      first digit 0 [✔]
+      first digit 0 < 10 [✔]
+      first digit 10 < 100 [✔]
+      first digit 100 < 1000 [✔]
+      first digit big [✔]
+      first digit 0 > -10 [✔]
+      first digit -10 > -100 [✔]
+      first digit -100 > -1000 [✔]
+    Task 4 & 5 : first and last digit
+      last digit is the first digit of the reversed number [✘]
+Chapter2
+  Chapter2Normal
+    Task3: subList
+      range on empty list [✘]
+      range within [✘]
+      range 0 .. len [✘]
+      range negative [✘]
+      range overflow [✘]
+      range x > y [✘]
+      range equal [✘]
+    Task4: firstHalf
+      empty [✘]
+      even len [✘]
+      odd len [✘]
+    Task5: isThird42
+      empty [✘]
+      one elem [✘]
+      two elem [✘]
+      three elem with 42 [✘]
+      three elem without 42 [✘]
+      more than three elem with 42 [✘]
+      more than three elem without 42 [✘]
+    Task6: duplicate
+      empty [✘]
+      one elem [✘]
+      two elems [✘]
+      many elems [✘]
+    Task6: duplicate property
+      length (duplicate xs) = 2 * length xs [✘]
+    Task7: takeEven
+      empty [✘]
+      one elem [✘]
+      two elem [✘]
+      many elems [✘]
+    Task8: smartReplicate
+      empty [✘]
+      one elem: 0 [✘]
+      one elem: negative [✘]
+      many positive [✘]
+      many negative [✘]
+    Task9: contains
+      empty [✘]
+      one with elem [✘]
+      one with elem, one without [✘]
+      one with elem, one without [✘]
+      all without [✘]
+      all with [✘]
+    Task11: rotate
+      empty list [✘]
+      empty list with 0 [✘]
+      list rotate 0 [✘]
+      list rotate len [✘]
+      list rotate n [✘]
+      list rotate len + n [✘]
+      empty on negative [✘]
+  Chapter2Advanced
+    Task12*: rewind
+      empty [✘]
+      one elem [✘]
+      many elems [✘]
+      many elems random [✘]
+    Task12*: rewind Properties
+      rewind == reverse [✘]
+      length rewind == length [✘]
+Chapter3
+  Chapter3Normal
+    Test.Chapter3[12:33] [✔]
+  Chapter3Advanced
+    Test.Chapter3[13:35] [✔]
+Chapter4
+  Chapter4Normal
+    Task2: Functor for Secret
+      doen't affect trap [✘]
+      change reward, same type [✘]
+      change reward, other type [✘]
+      change reward, other type [✘]
+    Task4: Applicative for Secret
+      pure int [✘]
+      pure bool [✘]
+      trap <*> reward [✘]
+      trap <*> trap [✘]
+      reward <*> trap [✘]
+      reward <*> reward - same type [✘]
+      reward <*> reward [✘]
+    Task6: Monad for Secret
+      Trap [✘]
+      Reward even [✘]
+      Reward odd [✘]
+  Chapter4Advanced
+    Task 8*: Before the Final Boss
+      Nothing - Nothing [✘]
+      Nothing - Just [✘]
+      Just True - Nothing [✘]
+      Just False - Nothing [✘]
+      Just - Just : False [✘]
+      Just - Just : True [✘]
+
+Failures:
+
+  test/Test/Chapter1.hs:36:55: 
+  1) Chapter1.Chapter1Normal, Task5: lastDigit, last digit of negative
+       expected: 2
+        but got: 8
+
+  To rerun use: --match "/Chapter1/Chapter1Normal/Task5: lastDigit/last digit of negative/"
+
+  test/Test/Chapter1.hs:87:35: 
+  2) Chapter1.Chapter1Advanced, Task 4 & 5 : first and last digit, last digit is the first digit of the reversed number
+         ✗ <interactive> failed at test/Test/Chapter1.hs:87:35
+           after 1 test.
+           shrink path: 1:
+         
+              ┏━━ test/Test/Chapter1.hs ━━━
+           71 ┃ chapter1advanced :: Spec
+           72 ┃ chapter1advanced = describe "Chapter1Advanced" $ do
+           73 ┃     describe "Task 10*" $ do
+           74 ┃         it "first digit 0" $ firstDigit 0 `shouldBe` 0
+           75 ┃         it "first digit 0 < 10" $ firstDigit 9 `shouldBe` 9
+           76 ┃         it "first digit 10 < 100" $ firstDigit 58 `shouldBe` 5
+           77 ┃         it "first digit 100 < 1000" $ firstDigit 158 `shouldBe` 1
+           78 ┃         it "first digit big" $ firstDigit 467321 `shouldBe` 4
+           79 ┃         it "first digit 0 > -10" $ firstDigit (-9) `shouldBe` 9
+           80 ┃         it "first digit -10 > -100" $ firstDigit (-58) `shouldBe` 5
+           81 ┃         it "first digit -100 > -1000" $ firstDigit (-158) `shouldBe` 1
+           82 ┃     describe "Task 4 & 5 : first and last digit" $ do
+           83 ┃         it "last digit is the first digit of the reversed number" $ hedgehog $ do
+           84 ┃             xGen <- forAll $ Gen.int (Range.linear (-200) 200)
+              ┃             │ -200
+           85 ┃             digit <- forAll $ Gen.int (Range.linear 1 9)
+              ┃             │ 1
+           86 ┃             let x = if xGen `rem` 10 == 0 then xGen + digit else xGen
+           87 ┃             (firstDigit x :: Int) === (lastDigit (reverseInt x) :: Int)
+              ┃             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              ┃             │ ━━━ Failed (- lhs) (+ rhs) ━━━
+              ┃             │ - 1
+              ┃             │ + 9
+         
+           This failure can be reproduced by running:
+           > recheckAt (Seed 6735868298237754121 9767432993738671187) "1:" <property>
+         
+
+  To rerun use: --match "/Chapter1/Chapter1Advanced/Task 4 & 5 : first and last digit/last digit is the first digit of the reversed number/"
+
+  src/Chapter2.hs:339:11: 
+  3) Chapter2.Chapter2Normal, Task3: subList, range on empty list
+       uncaught exception: ErrorCall
+       subList: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:339:11 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task3: subList/range on empty list/"
+
+  src/Chapter2.hs:339:11: 
+  4) Chapter2.Chapter2Normal, Task3: subList, range within
+       uncaught exception: ErrorCall
+       subList: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:339:11 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task3: subList/range within/"
+
+  src/Chapter2.hs:339:11: 
+  5) Chapter2.Chapter2Normal, Task3: subList, range 0 .. len
+       uncaught exception: ErrorCall
+       subList: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:339:11 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task3: subList/range 0 .. len/"
+
+  src/Chapter2.hs:339:11: 
+  6) Chapter2.Chapter2Normal, Task3: subList, range negative
+       uncaught exception: ErrorCall
+       subList: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:339:11 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task3: subList/range negative/"
+
+  src/Chapter2.hs:339:11: 
+  7) Chapter2.Chapter2Normal, Task3: subList, range overflow
+       uncaught exception: ErrorCall
+       subList: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:339:11 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task3: subList/range overflow/"
+
+  src/Chapter2.hs:339:11: 
+  8) Chapter2.Chapter2Normal, Task3: subList, range x > y
+       uncaught exception: ErrorCall
+       subList: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:339:11 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task3: subList/range x > y/"
+
+  src/Chapter2.hs:339:11: 
+  9) Chapter2.Chapter2Normal, Task3: subList, range equal
+       uncaught exception: ErrorCall
+       subList: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:339:11 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task3: subList/range equal/"
+
+  src/Chapter2.hs:352:15: 
+  10) Chapter2.Chapter2Normal, Task4: firstHalf, empty
+       uncaught exception: ErrorCall
+       firstHalf: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:352:15 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task4: firstHalf/empty/"
+
+  src/Chapter2.hs:352:15: 
+  11) Chapter2.Chapter2Normal, Task4: firstHalf, even len
+       uncaught exception: ErrorCall
+       firstHalf: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:352:15 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task4: firstHalf/even len/"
+
+  src/Chapter2.hs:352:15: 
+  12) Chapter2.Chapter2Normal, Task4: firstHalf, odd len
+       uncaught exception: ErrorCall
+       firstHalf: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:352:15 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task4: firstHalf/odd len/"
+
+  src/Chapter2.hs:504:13: 
+  13) Chapter2.Chapter2Normal, Task5: isThird42, empty
+       uncaught exception: ErrorCall
+       isThird42: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:504:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task5: isThird42/empty/"
+
+  src/Chapter2.hs:504:13: 
+  14) Chapter2.Chapter2Normal, Task5: isThird42, one elem
+       uncaught exception: ErrorCall
+       isThird42: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:504:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task5: isThird42/one elem/"
+
+  src/Chapter2.hs:504:13: 
+  15) Chapter2.Chapter2Normal, Task5: isThird42, two elem
+       uncaught exception: ErrorCall
+       isThird42: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:504:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task5: isThird42/two elem/"
+
+  src/Chapter2.hs:504:13: 
+  16) Chapter2.Chapter2Normal, Task5: isThird42, three elem with 42
+       uncaught exception: ErrorCall
+       isThird42: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:504:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task5: isThird42/three elem with 42/"
+
+  src/Chapter2.hs:504:13: 
+  17) Chapter2.Chapter2Normal, Task5: isThird42, three elem without 42
+       uncaught exception: ErrorCall
+       isThird42: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:504:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task5: isThird42/three elem without 42/"
+
+  src/Chapter2.hs:504:13: 
+  18) Chapter2.Chapter2Normal, Task5: isThird42, more than three elem with 42
+       uncaught exception: ErrorCall
+       isThird42: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:504:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task5: isThird42/more than three elem with 42/"
+
+  src/Chapter2.hs:504:13: 
+  19) Chapter2.Chapter2Normal, Task5: isThird42, more than three elem without 42
+       uncaught exception: ErrorCall
+       isThird42: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:504:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task5: isThird42/more than three elem without 42/"
+
+  src/Chapter2.hs:609:13: 
+  20) Chapter2.Chapter2Normal, Task6: duplicate, empty
+       uncaught exception: ErrorCall
+       duplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:609:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task6: duplicate/empty/"
+
+  src/Chapter2.hs:609:13: 
+  21) Chapter2.Chapter2Normal, Task6: duplicate, one elem
+       uncaught exception: ErrorCall
+       duplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:609:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task6: duplicate/one elem/"
+
+  src/Chapter2.hs:609:13: 
+  22) Chapter2.Chapter2Normal, Task6: duplicate, two elems
+       uncaught exception: ErrorCall
+       duplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:609:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task6: duplicate/two elems/"
+
+  src/Chapter2.hs:609:13: 
+  23) Chapter2.Chapter2Normal, Task6: duplicate, many elems
+       uncaught exception: ErrorCall
+       duplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:609:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task6: duplicate/many elems/"
+
+  test/Test/Chapter2.hs:51:35: 
+  24) Chapter2.Chapter2Normal, Task6: duplicate property, length (duplicate xs) = 2 * length xs
+         ✗ <interactive> failed at test/Test/Chapter2.hs:51:35
+           after 1 test.
+           shrink path: 1:
+         
+              ┏━━ test/Test/Chapter2.hs ━━━
+           21 ┃ chapter2normal :: Spec
+           22 ┃ chapter2normal = describe "Chapter2Normal" $ do
+           23 ┃     describe "Task3: subList" $ do
+           24 ┃         it "range on empty list" $ subList 1 2 emptyInts `shouldBe` emptyInts
+           25 ┃         it "range within" $ subList 2 5 [0..7] `shouldBe` [2..5]
+           26 ┃         it "range 0 .. len" $ subList 0 10 [0..10] `shouldBe` [0..10]
+           27 ┃         it "range negative" $ subList (-1) 5 [0..5] `shouldBe` []
+           28 ┃         it "range overflow" $ subList 0 5 [0, 1] `shouldBe` [0, 1]
+           29 ┃         it "range x > y" $ subList 5 2 [0..5] `shouldBe` []
+           30 ┃         it "range equal" $ subList 0 0 [0..3] `shouldBe` [0]
+           31 ┃     describe "Task4: firstHalf" $ do
+           32 ┃         it "empty" $ firstHalf emptyInts `shouldBe` emptyInts
+           33 ┃         it "even len" $ firstHalf [1,3,5,7] `shouldBe` [1, 3]
+           34 ┃         it "odd len" $ firstHalf [1,3,5,7, 10] `shouldBe` [1, 3]
+           35 ┃     describe "Task5: isThird42" $ do
+           36 ┃         it "empty" $ isThird42 emptyInts `shouldBe` False
+           37 ┃         it "one elem" $ isThird42 [42] `shouldBe` False
+           38 ┃         it "two elem" $ isThird42 [1, 42] `shouldBe` False
+           39 ┃         it "three elem with 42" $ isThird42 [1, 2, 42] `shouldBe` True
+           40 ┃         it "three elem without 42" $ isThird42 [1, 2, 3] `shouldBe` False
+           41 ┃         it "more than three elem with 42" $ isThird42 [1, 2, 42, 4, 5, 6] `shouldBe` True
+           42 ┃         it "more than three elem without 42" $ isThird42 [1..10] `shouldBe` False
+           43 ┃     describe "Task6: duplicate" $ do
+           44 ┃         it "empty" $ duplicate emptyInts `shouldBe` emptyInts
+           45 ┃         it "one elem" $ duplicate [0] `shouldBe` [0, 0]
+           46 ┃         it "two elems" $ duplicate [-1, 0] `shouldBe` [-1, -1, 0, 0]
+           47 ┃         it "many elems" $ duplicate [0..5] `shouldBe` [0,0,1,1,2,2,3,3,4,4,5,5]
+           48 ┃     describe "Task6: duplicate property" $ do
+           49 ┃         it "length (duplicate xs) = 2 * length xs" $ hedgehog $ do
+           50 ┃             xs <- forAll $ Gen.list (Range.linear 0 10) Gen.bool
+              ┃             │ []
+           51 ┃             length (duplicate xs) === 2 * length xs
+              ┃             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              ┃             │ ━━━ Exception (ErrorCall) ━━━
+              ┃             │ duplicate: Not implemented!
+              ┃             │ CallStack (from HasCallStack):
+              ┃             │   error, called at src/Chapter2.hs:609:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+           52 ┃     describe "Task7: takeEven" $ do
+           53 ┃         it "empty" $ takeEven emptyInts `shouldBe` emptyInts
+           54 ┃         it "one elem" $ takeEven [1] `shouldBe` [1]
+           55 ┃         it "two elem" $ takeEven [1,2] `shouldBe` [1]
+           56 ┃         it "many elems" $ takeEven [0 .. 10] `shouldBe` [0, 2 .. 10]
+           57 ┃     describe "Task8: smartReplicate" $ do
+           58 ┃         it "empty" $ smartReplicate emptyInts `shouldBe` emptyInts
+           59 ┃         it "one elem: 0" $ smartReplicate [0] `shouldBe` emptyInts
+           60 ┃         it "one elem: negative" $ smartReplicate [-5] `shouldBe` emptyInts
+           61 ┃         it "many positive" $ smartReplicate [0..3] `shouldBe` [1, 2, 2, 3, 3, 3]
+           62 ┃         it "many negative" $ smartReplicate [0, -1 .. -3] `shouldBe` []
+           63 ┃     describe "Task9: contains" $ do
+           64 ┃         it "empty" $ contains 0 ([] :: [[Int]]) `shouldBe` ([] :: [[Int]])
+           65 ┃         it "one with elem" $ contains 0 [[5, 0, 1]] `shouldBe` [[5, 0, 1]]
+           66 ┃         it "one with elem, one without" $ contains 0 [[5, 0, 1], [1..4]] `shouldBe` [[5, 0, 1]]
+           67 ┃         it "one with elem, one without" $ contains 0 [[1..4], [5, 0, 1]] `shouldBe` [[5, 0, 1]]
+           68 ┃         it "all without" $ contains 0 [[1..4], [5,4..1]] `shouldBe` ([] :: [[Int]])
+           69 ┃         it "all with" $ contains 5 [[1..5], [6,5..1]] `shouldBe` [[1..5], [6,5..1]]
+           70 ┃     describe "Task11: rotate" $ do
+           71 ┃         it "empty list" $ rotate 5 emptyInts `shouldBe` emptyInts
+           72 ┃         it "empty list with 0" $ rotate 0 emptyInts `shouldBe` emptyInts
+           73 ┃         it "list rotate 0" $ rotate 0 [1..5] `shouldBe` [1..5]
+           74 ┃         it "list rotate len" $ rotate 5 [1..5] `shouldBe` [1..5]
+           75 ┃         it "list rotate n" $ rotate 3 [1..5] `shouldBe` [4,5,1,2,3]
+           76 ┃         it "list rotate len + n" $ rotate 8 [1..5] `shouldBe` [4,5,1,2,3]
+           77 ┃         it "empty on negative" $ rotate (-5) [1..5] `shouldBe` emptyInts
+         
+           This failure can be reproduced by running:
+           > recheckAt (Seed 6735868298237754121 9767432993738671187) "1:" <property>
+         
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task6: duplicate property/length (duplicate xs) = 2 * length xs/"
+
+  src/Chapter2.hs:624:12: 
+  25) Chapter2.Chapter2Normal, Task7: takeEven, empty
+       uncaught exception: ErrorCall
+       takeEven: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:624:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task7: takeEven/empty/"
+
+  src/Chapter2.hs:624:12: 
+  26) Chapter2.Chapter2Normal, Task7: takeEven, one elem
+       uncaught exception: ErrorCall
+       takeEven: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:624:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task7: takeEven/one elem/"
+
+  src/Chapter2.hs:624:12: 
+  27) Chapter2.Chapter2Normal, Task7: takeEven, two elem
+       uncaught exception: ErrorCall
+       takeEven: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:624:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task7: takeEven/two elem/"
+
+  src/Chapter2.hs:624:12: 
+  28) Chapter2.Chapter2Normal, Task7: takeEven, many elems
+       uncaught exception: ErrorCall
+       takeEven: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:624:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task7: takeEven/many elems/"
+
+  src/Chapter2.hs:731:20: 
+  29) Chapter2.Chapter2Normal, Task8: smartReplicate, empty
+       uncaught exception: ErrorCall
+       smartReplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:731:20 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task8: smartReplicate/empty/"
+
+  src/Chapter2.hs:731:20: 
+  30) Chapter2.Chapter2Normal, Task8: smartReplicate, one elem: 0
+       uncaught exception: ErrorCall
+       smartReplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:731:20 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task8: smartReplicate/one elem: 0/"
+
+  src/Chapter2.hs:731:20: 
+  31) Chapter2.Chapter2Normal, Task8: smartReplicate, one elem: negative
+       uncaught exception: ErrorCall
+       smartReplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:731:20 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task8: smartReplicate/one elem: negative/"
+
+  src/Chapter2.hs:731:20: 
+  32) Chapter2.Chapter2Normal, Task8: smartReplicate, many positive
+       uncaught exception: ErrorCall
+       smartReplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:731:20 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task8: smartReplicate/many positive/"
+
+  src/Chapter2.hs:731:20: 
+  33) Chapter2.Chapter2Normal, Task8: smartReplicate, many negative
+       uncaught exception: ErrorCall
+       smartReplicate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:731:20 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task8: smartReplicate/many negative/"
+
+  src/Chapter2.hs:744:12: 
+  34) Chapter2.Chapter2Normal, Task9: contains, empty
+       uncaught exception: ErrorCall
+       contains: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:744:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task9: contains/empty/"
+
+  src/Chapter2.hs:744:12: 
+  35) Chapter2.Chapter2Normal, Task9: contains, one with elem
+       uncaught exception: ErrorCall
+       contains: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:744:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task9: contains/one with elem/"
+
+  src/Chapter2.hs:744:12: 
+  36) Chapter2.Chapter2Normal, Task9: contains, one with elem, one without
+       uncaught exception: ErrorCall
+       contains: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:744:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task9: contains/one with elem, one without/"
+
+  src/Chapter2.hs:744:12: 
+  37) Chapter2.Chapter2Normal, Task9: contains, one with elem, one without
+       uncaught exception: ErrorCall
+       contains: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:744:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task9: contains/one with elem, one without/"
+
+  src/Chapter2.hs:744:12: 
+  38) Chapter2.Chapter2Normal, Task9: contains, all without
+       uncaught exception: ErrorCall
+       contains: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:744:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task9: contains/all without/"
+
+  src/Chapter2.hs:744:12: 
+  39) Chapter2.Chapter2Normal, Task9: contains, all with
+       uncaught exception: ErrorCall
+       contains: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:744:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task9: contains/all with/"
+
+  src/Chapter2.hs:845:10: 
+  40) Chapter2.Chapter2Normal, Task11: rotate, empty list
+       uncaught exception: ErrorCall
+       rotate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:845:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task11: rotate/empty list/"
+
+  src/Chapter2.hs:845:10: 
+  41) Chapter2.Chapter2Normal, Task11: rotate, empty list with 0
+       uncaught exception: ErrorCall
+       rotate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:845:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task11: rotate/empty list with 0/"
+
+  src/Chapter2.hs:845:10: 
+  42) Chapter2.Chapter2Normal, Task11: rotate, list rotate 0
+       uncaught exception: ErrorCall
+       rotate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:845:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task11: rotate/list rotate 0/"
+
+  src/Chapter2.hs:845:10: 
+  43) Chapter2.Chapter2Normal, Task11: rotate, list rotate len
+       uncaught exception: ErrorCall
+       rotate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:845:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task11: rotate/list rotate len/"
+
+  src/Chapter2.hs:845:10: 
+  44) Chapter2.Chapter2Normal, Task11: rotate, list rotate n
+       uncaught exception: ErrorCall
+       rotate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:845:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task11: rotate/list rotate n/"
+
+  src/Chapter2.hs:845:10: 
+  45) Chapter2.Chapter2Normal, Task11: rotate, list rotate len + n
+       uncaught exception: ErrorCall
+       rotate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:845:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task11: rotate/list rotate len + n/"
+
+  src/Chapter2.hs:845:10: 
+  46) Chapter2.Chapter2Normal, Task11: rotate, empty on negative
+       uncaught exception: ErrorCall
+       rotate: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:845:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Normal/Task11: rotate/empty on negative/"
+
+  src/Chapter2.hs:861:10: 
+  47) Chapter2.Chapter2Advanced, Task12*: rewind, empty
+       uncaught exception: ErrorCall
+       rewind: Not Implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:861:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Advanced/Task12*: rewind/empty/"
+
+  src/Chapter2.hs:861:10: 
+  48) Chapter2.Chapter2Advanced, Task12*: rewind, one elem
+       uncaught exception: ErrorCall
+       rewind: Not Implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:861:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Advanced/Task12*: rewind/one elem/"
+
+  src/Chapter2.hs:861:10: 
+  49) Chapter2.Chapter2Advanced, Task12*: rewind, many elems
+       uncaught exception: ErrorCall
+       rewind: Not Implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:861:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Advanced/Task12*: rewind/many elems/"
+
+  src/Chapter2.hs:861:10: 
+  50) Chapter2.Chapter2Advanced, Task12*: rewind, many elems random
+       uncaught exception: ErrorCall
+       rewind: Not Implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter2.hs:861:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+
+  To rerun use: --match "/Chapter2/Chapter2Advanced/Task12*: rewind/many elems random/"
+
+  test/Test/Chapter2.hs:89:23: 
+  51) Chapter2.Chapter2Advanced, Task12*: rewind Properties, rewind == reverse
+         ✗ <interactive> failed at test/Test/Chapter2.hs:89:23
+           after 1 test.
+           shrink path: 1:
+         
+              ┏━━ test/Test/Chapter2.hs ━━━
+           79 ┃ chapter2advanced :: Spec
+           80 ┃ chapter2advanced = describe "Chapter2Advanced" $ do
+           81 ┃     describe "Task12*: rewind" $ do
+           82 ┃         it "empty" $ rewind emptyInts `shouldBe` emptyInts
+           83 ┃         it "one elem" $ rewind [1] `shouldBe` [1]
+           84 ┃         it "many elems" $ rewind [1..10] `shouldBe` [10,9..1]
+           85 ┃         it "many elems random" $ rewind [5,1,9,56,32,7,11] `shouldBe` [11,7,32,56,9,1,5]
+           86 ┃     describe "Task12*: rewind Properties" $ do
+           87 ┃         it "rewind == reverse" $ hedgehog $ do
+           88 ┃             xs <- forAll $ Gen.list (Range.linear 0 10) Gen.bool
+              ┃             │ []
+           89 ┃             rewind xs === reverse xs
+              ┃             ^^^^^^^^^^^^^^^^^^^^^^^^
+              ┃             │ ━━━ Exception (ErrorCall) ━━━
+              ┃             │ rewind: Not Implemented!
+              ┃             │ CallStack (from HasCallStack):
+              ┃             │   error, called at src/Chapter2.hs:861:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+           90 ┃         it "length rewind == length" $ hedgehog $ do
+           91 ┃             xs <- forAll $ Gen.list (Range.linear 0 10) Gen.bool
+           92 ┃             length (rewind xs :: [Bool]) === length xs
+         
+           This failure can be reproduced by running:
+           > recheckAt (Seed 6735868298237754121 9767432993738671187) "1:" <property>
+         
+
+  To rerun use: --match "/Chapter2/Chapter2Advanced/Task12*: rewind Properties/rewind == reverse/"
+
+  test/Test/Chapter2.hs:92:42: 
+  52) Chapter2.Chapter2Advanced, Task12*: rewind Properties, length rewind == length
+         ✗ <interactive> failed at test/Test/Chapter2.hs:92:42
+           after 1 test.
+           shrink path: 1:
+         
+              ┏━━ test/Test/Chapter2.hs ━━━
+           79 ┃ chapter2advanced :: Spec
+           80 ┃ chapter2advanced = describe "Chapter2Advanced" $ do
+           81 ┃     describe "Task12*: rewind" $ do
+           82 ┃         it "empty" $ rewind emptyInts `shouldBe` emptyInts
+           83 ┃         it "one elem" $ rewind [1] `shouldBe` [1]
+           84 ┃         it "many elems" $ rewind [1..10] `shouldBe` [10,9..1]
+           85 ┃         it "many elems random" $ rewind [5,1,9,56,32,7,11] `shouldBe` [11,7,32,56,9,1,5]
+           86 ┃     describe "Task12*: rewind Properties" $ do
+           87 ┃         it "rewind == reverse" $ hedgehog $ do
+           88 ┃             xs <- forAll $ Gen.list (Range.linear 0 10) Gen.bool
+           89 ┃             rewind xs === reverse xs
+           90 ┃         it "length rewind == length" $ hedgehog $ do
+           91 ┃             xs <- forAll $ Gen.list (Range.linear 0 10) Gen.bool
+              ┃             │ []
+           92 ┃             length (rewind xs :: [Bool]) === length xs
+              ┃             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              ┃             │ ━━━ Exception (ErrorCall) ━━━
+              ┃             │ rewind: Not Implemented!
+              ┃             │ CallStack (from HasCallStack):
+              ┃             │   error, called at src/Chapter2.hs:861:10 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter2
+         
+           This failure can be reproduced by running:
+           > recheckAt (Seed 6735868298237754121 9767432993738671187) "1:" <property>
+         
+
+  To rerun use: --match "/Chapter2/Chapter2Advanced/Task12*: rewind Properties/length rewind == length/"
+
+  src/Chapter4.hs:295:12: 
+  53) Chapter4.Chapter4Normal, Task2: Functor for Secret, doen't affect trap
+       uncaught exception: ErrorCall
+       fmap for Box: not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:295:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task2: Functor for Secret/doen't affect trap/"
+
+  src/Chapter4.hs:295:12: 
+  54) Chapter4.Chapter4Normal, Task2: Functor for Secret, change reward, same type
+       uncaught exception: ErrorCall
+       fmap for Box: not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:295:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task2: Functor for Secret/change reward, same type/"
+
+  src/Chapter4.hs:295:12: 
+  55) Chapter4.Chapter4Normal, Task2: Functor for Secret, change reward, other type
+       uncaught exception: ErrorCall
+       fmap for Box: not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:295:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task2: Functor for Secret/change reward, other type/"
+
+  src/Chapter4.hs:295:12: 
+  56) Chapter4.Chapter4Normal, Task2: Functor for Secret, change reward, other type
+       uncaught exception: ErrorCall
+       fmap for Box: not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:295:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task2: Functor for Secret/change reward, other type/"
+
+  src/Chapter4.hs:474:12: 
+  57) Chapter4.Chapter4Normal, Task4: Applicative for Secret, pure int
+       uncaught exception: ErrorCall
+       pure Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:474:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task4: Applicative for Secret/pure int/"
+
+  src/Chapter4.hs:474:12: 
+  58) Chapter4.Chapter4Normal, Task4: Applicative for Secret, pure bool
+       uncaught exception: ErrorCall
+       pure Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:474:12 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task4: Applicative for Secret/pure bool/"
+
+  src/Chapter4.hs:477:13: 
+  59) Chapter4.Chapter4Normal, Task4: Applicative for Secret, trap <*> reward
+       uncaught exception: ErrorCall
+       (<*>) Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:477:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task4: Applicative for Secret/trap <*> reward/"
+
+  src/Chapter4.hs:477:13: 
+  60) Chapter4.Chapter4Normal, Task4: Applicative for Secret, trap <*> trap
+       uncaught exception: ErrorCall
+       (<*>) Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:477:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task4: Applicative for Secret/trap <*> trap/"
+
+  src/Chapter4.hs:477:13: 
+  61) Chapter4.Chapter4Normal, Task4: Applicative for Secret, reward <*> trap
+       uncaught exception: ErrorCall
+       (<*>) Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:477:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task4: Applicative for Secret/reward <*> trap/"
+
+  src/Chapter4.hs:477:13: 
+  62) Chapter4.Chapter4Normal, Task4: Applicative for Secret, reward <*> reward - same type
+       uncaught exception: ErrorCall
+       (<*>) Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:477:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task4: Applicative for Secret/reward <*> reward - same type/"
+
+  src/Chapter4.hs:477:13: 
+  63) Chapter4.Chapter4Normal, Task4: Applicative for Secret, reward <*> reward
+       uncaught exception: ErrorCall
+       (<*>) Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:477:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task4: Applicative for Secret/reward <*> reward/"
+
+  src/Chapter4.hs:602:13: 
+  64) Chapter4.Chapter4Normal, Task6: Monad for Secret, Trap
+       uncaught exception: ErrorCall
+       bind Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:602:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task6: Monad for Secret/Trap/"
+
+  src/Chapter4.hs:602:13: 
+  65) Chapter4.Chapter4Normal, Task6: Monad for Secret, Reward even
+       uncaught exception: ErrorCall
+       bind Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:602:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task6: Monad for Secret/Reward even/"
+
+  src/Chapter4.hs:602:13: 
+  66) Chapter4.Chapter4Normal, Task6: Monad for Secret, Reward odd
+       uncaught exception: ErrorCall
+       bind Secret: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:602:13 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Normal/Task6: Monad for Secret/Reward odd/"
+
+  src/Chapter4.hs:631:8: 
+  67) Chapter4.Chapter4Advanced, Task 8*: Before the Final Boss, Nothing - Nothing
+       uncaught exception: ErrorCall
+       andM: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:631:8 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Advanced/Task 8*: Before the Final Boss/Nothing - Nothing/"
+
+  src/Chapter4.hs:631:8: 
+  68) Chapter4.Chapter4Advanced, Task 8*: Before the Final Boss, Nothing - Just
+       uncaught exception: ErrorCall
+       andM: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:631:8 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Advanced/Task 8*: Before the Final Boss/Nothing - Just/"
+
+  src/Chapter4.hs:631:8: 
+  69) Chapter4.Chapter4Advanced, Task 8*: Before the Final Boss, Just True - Nothing
+       uncaught exception: ErrorCall
+       andM: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:631:8 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Advanced/Task 8*: Before the Final Boss/Just True - Nothing/"
+
+  src/Chapter4.hs:631:8: 
+  70) Chapter4.Chapter4Advanced, Task 8*: Before the Final Boss, Just False - Nothing
+       uncaught exception: ErrorCall
+       andM: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:631:8 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Advanced/Task 8*: Before the Final Boss/Just False - Nothing/"
+
+  src/Chapter4.hs:631:8: 
+  71) Chapter4.Chapter4Advanced, Task 8*: Before the Final Boss, Just - Just : False
+       uncaught exception: ErrorCall
+       andM: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:631:8 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Advanced/Task 8*: Before the Final Boss/Just - Just : False/"
+
+  src/Chapter4.hs:631:8: 
+  72) Chapter4.Chapter4Advanced, Task 8*: Before the Final Boss, Just - Just : True
+       uncaught exception: ErrorCall
+       andM: Not implemented!
+       CallStack (from HasCallStack):
+         error, called at src/Chapter4.hs:631:8 in learn4haskell-0.0.0.0-H5HiwysmaXJ89eTLcVRk1F:Chapter4
+
+  To rerun use: --match "/Chapter4/Chapter4Advanced/Task 8*: Before the Final Boss/Just - Just : True/"
+
+Randomized with seed 704844923
+
+Finished in 0.0896 seconds
+119 examples, 72 failures
